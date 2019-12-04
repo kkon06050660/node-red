@@ -1,0 +1,11 @@
+[{"id":"46aa24b3.f5244c","type":"tab","label":"get_LED","disabled":false,"info":""},
+{"id":"f50e1504.7e3cf8","type":"http in","z":"46aa24b3.f5244c","name":"","url":"/data","method":"get","upload":false,"swaggerDoc":"","x":180,"y":220,"wires":[["23a4c2ac.390bae"]]},
+{"id":"23a4c2ac.390bae","type":"random","z":"46aa24b3.f5244c","name":"","low":"1","high":"10","inte":"true","property":"payload","x":360,"y":220,"wires":[["b9d5d54e.0323a8","54919df0.652ca4"]]},
+{"id":"b9d5d54e.0323a8","type":"debug","z":"46aa24b3.f5244c","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":590,"y":320,"wires":[]},
+{"id":"54919df0.652ca4","type":"http response","z":"46aa24b3.f5244c","name":"","statusCode":"","headers":{},"x":570,"y":220,"wires":[]},
+{"id":"cac6907b.ab03","type":"http in","z":"46aa24b3.f5244c","name":"","url":"/pin4","method":"get","upload":false,"swaggerDoc":"","x":180,"y":420,"wires":[["fdf03983.ce9458"]]},
+{"id":"d1bc5789.51b678","type":"debug","z":"46aa24b3.f5244c","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":590,"y":520,"wires":[]},
+{"id":"9331373b.38f5e8","type":"http response","z":"46aa24b3.f5244c","name":"","statusCode":"","headers":{},"x":570,"y":420,"wires":[]},
+{"id":"e48961e4.5a7d5","type":"rpi-gpio in","z":"46aa24b3.f5244c","name":"GPIO_4","pin":"7","intype":"up","debounce":"25","read":false,"x":180,"y":520,"wires":[["8a39c979.473fa8"]]},
+{"id":"8a39c979.473fa8","type":"function","z":"46aa24b3.f5244c","name":"Set GPIO","func":"global.set(\"GPIO\",msg.payload)\nreturn msg;","outputs":1,"noerr":0,"x":360,"y":520,"wires":[["d1bc5789.51b678"]]},
+{"id":"fdf03983.ce9458","type":"function","z":"46aa24b3.f5244c","name":"Get GPIO","func":"msg.payload=global.get(\"GPIO\");\nreturn msg;","outputs":1,"noerr":0,"x":360,"y":420,"wires":[["d1bc5789.51b678","9331373b.38f5e8"]]}]
