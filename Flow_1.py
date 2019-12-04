@@ -6,4 +6,3 @@
 {"t":"else"}],"checkall":"true","repair":false,"outputs":2,"x":290,"y":280,"wires":[["eeae47f.9abb0b8"],["b27195fc.12e148"]]},
 {"id":"eeae47f.9abb0b8","type":"change","z":"804cef09.96c76","name":"Change to 0","rules":[{"t":"set","p":"payload","pt":"msg","to":"0","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":470,"y":240,"wires":[["af69173a.5b67b8"]]},
 {"id":"b27195fc.12e148","type":"change","z":"804cef09.96c76","name":"Change to 1","rules":[{"t":"set","p":"payload","pt":"msg","to":"1","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":470,"y":320,"wires":[["af69173a.5b67b8"]]}]
-
